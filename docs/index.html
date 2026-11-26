@@ -36,6 +36,14 @@
   .tagline{color:var(--sub);margin-top:10px;font-size:15px}
   .tagline b{color:var(--text);font-weight:600}
   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:20px;margin-top:8px}
+  .qrwrap{
+    display:flex;align-items:center;gap:16px;justify-content:center;
+    background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+    padding:14px 20px;margin-bottom:26px;
+  }
+  .qrwrap img{width:86px;height:86px;border-radius:10px;background:#fff;padding:6px;flex:none}
+  .qrwrap b{display:block;font-size:14.5px}
+  .qrwrap p{font-size:12.5px;color:var(--sub);margin-top:3px}
   .card{
     background:linear-gradient(180deg,var(--panel) 0%,var(--panel2) 100%);
     border:1px solid var(--line);border-radius:var(--radius);
@@ -101,6 +109,14 @@
     </p>
   </header>
 
+  <div class="qrwrap">
+    <img src="http://150.138.73.130/download/download-qr.png" alt="下载页二维码" />
+    <div>
+      <b>手机扫码打开本页</b>
+      <p>在电脑上扫一下，手机上直接选对应版本下载安装</p>
+    </div>
+  </div>
+
   <div class="grid">
     <!-- Android -->
     <section class="card">
@@ -117,7 +133,7 @@
         <li>菜单可刷新、改服务器地址</li>
       </ul>
       <div class="btns">
-        <a class="btn primary" href="https://github.com/jinzi-bot/123/releases/download/v1.0.0/QQFarm-Panel-1.0.0.apk">下载 APK</a>
+        <a class="btn primary" href="http://150.138.73.130/download/QQFarm-Panel-1.0.0.apk">下载 APK</a>
         <div class="hint">首次安装需允许「未知来源应用」</div>
       </div>
     </section>
@@ -137,8 +153,8 @@
         <li>安装版：可选目录 + 桌面快捷方式</li>
       </ul>
       <div class="btns">
-        <a class="btn primary" href="https://github.com/jinzi-bot/123/releases/download/v1.0.0/QQFarm-Panel-1.0.0-setup.exe">下载安装版</a>
-        <a class="btn ghost" href="https://github.com/jinzi-bot/123/releases/download/v1.0.0/QQFarm-Panel-1.0.0-portable.exe">下载免安装版</a>
+        <a class="btn primary" href="http://150.138.73.130/download/QQFarm-Panel-1.0.0-setup.exe">下载安装版</a>
+        <a class="btn ghost" href="http://150.138.73.130/download/QQFarm-Panel-1.0.0-portable.exe">下载免安装版</a>
         <div class="hint">SmartScreen 提示时点「更多信息 → 仍要运行」</div>
       </div>
     </section>
@@ -158,7 +174,7 @@
         <li class="warn">未签名包，需自备 Apple ID 签名</li>
       </ul>
       <div class="btns">
-        <a class="btn primary" href="https://github.com/jinzi-bot/123/releases/download/v1.0.0/QqFarmPanel-1.0.0-unsigned.ipa">下载未签名 IPA</a>
+        <a class="btn primary" href="http://150.138.73.130/download/QqFarmPanel-1.0.0-unsigned.ipa">下载未签名 IPA</a>
         <div class="hint">用 Sideloadly / AltStore 签名后安装（见下方步骤）</div>
       </div>
     </section>
