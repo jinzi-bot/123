@@ -1,0 +1,37 @@
+name: QqFarmPanel
+options:
+  bundleIdPrefix: com.qqfarm
+  deploymentTarget:
+    iOS: "16.0"
+  createIntermediateGroups: true
+  xcodeVersion: "15.0"
+
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    IPHONEOS_DEPLOYMENT_TARGET: "16.0"
+    ENABLE_USER_SCRIPT_SANDBOXING: NO
+
+targets:
+  QqFarmPanel:
+    type: application
+    platform: iOS
+    deploymentTarget: "16.0"
+    sources:
+      - path: QqFarmPanel
+        excludes:
+          - "Info.plist"
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.qqfarm.panel
+        PRODUCT_NAME: QqFarmPanel
+        MARKETING_VERSION: "1.0.0"
+        CURRENT_PROJECT_VERSION: "1"
+        INFOPLIST_FILE: QqFarmPanel/Info.plist
+        GENERATE_INFOPLIST_FILE: NO
+        TARGETED_DEVICE_FAMILY: "1,2"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        CODE_SIGN_STYLE: Automatic
+        DEVELOPMENT_TEAM: ""
+        SUPPORTS_MACCATALYST: NO
+        SWIFT_EMIT_LOC_STRINGS: YES

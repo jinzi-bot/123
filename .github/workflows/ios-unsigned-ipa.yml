@@ -1,0 +1,60 @@
+name: Build unsigned iOS IPA
+
+# 没有 Mac 也能出 ipa：GitHub 免费的 macOS 机器编译，产物是未签名 ipa，
+# 下载后用 Windows 上的 Sideloadly / AltStore 用你自己的 Apple ID 签名安装。
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, master]
+
+jobs:
+  build:
+    name: Build IPA (unsigned)
+    runs-on: macos-14
+    timeout-minutes: 25
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Show Xcode version
+        run: xcodebuild -version
+
+      - name: Install XcodeGen
+        run: brew install xcodegen
+
+      - name: Generate Xcode project
+        run: xcodegen generate
+
+      - name: Build app (no code signing)
+        run: |
+          xcodebuild \
+            -project QqFarmPanel.xcodeproj \
+            -scheme QqFarmPanel \
+            -configuration Release \
+            -sdk iphoneos \
+            -derivedDataPath build \
+            -destination 'generic/platform=iOS' \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO \
+            build
+
+      - name: Package unsigned IPA
+        run: |
+          set -e
+          APP_PATH="build/Build/Products/Release-iphoneos/QqFarmPanel.app"
+          test -d "$APP_PATH"
+          rm -rf Payload QqFarmPanel-unsigned.ipa
+          mkdir -p Payload
+          cp -R "$APP_PATH" Payload/
+          zip -qry QqFarmPanel-unsigned.ipa Payload
+          ls -lh QqFarmPanel-unsigned.ipa
+
+      - name: Upload IPA artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: QqFarmPanel-unsigned-ipa
+          path: QqFarmPanel-unsigned.ipa
+          if-no-files-found: error

@@ -1,0 +1,12 @@
+# macOS / Xcode
+build/
+DerivedData/
+*.xcodeproj
+*.xcworkspace
+xcuserdata/
+*.ipa
+Payload/
+.DS_Store
+
+# macOS 端无关文件
+AppIcon.icns
