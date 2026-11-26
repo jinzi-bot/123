@@ -19,6 +19,8 @@ SwiftUI + WKWebView 原生壳，功能与 Android / Windows 端一致：默认�
 5. 解压得到 `QqFarmPanel-unsigned.ipa`
 
 > `.github/workflows/ios-unsigned-ipa.yml` 已经写好了：自动装 XcodeGen、生成工程、`CODE_SIGNING_ALLOWED=NO` 编译、打 Payload 成 ipa、上传产物。
+>
+> 注意：runner 必须是 `macos-15`（GitHub 已不支持 `macos-14`，会报 `The configuration 'macos-14-arm64-us-default' is not supported` 并被取消）。
 
 ### A2. 用 Sideloadly 装到 iPhone（约 5 分钟）
 
