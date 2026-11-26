@@ -3,6 +3,9 @@
 SwiftUI + WKWebView 原生壳，功能与 Android / Windows 端一致：默认加载 `http://150.138.73.130`，可随时改服务器地址，支持返回/刷新。
 
 > **Windows 上无法编译 iOS 应用**（需要 Apple 的 Xcode，只能在 macOS 跑）。所以这里给的是**完整工程源码**，外加**一条不需要 Mac 的出包路径**。
+>
+> 已经用这条路编好了：`app/dist/QqFarmPanel-1.0.0-unsigned.ipa`（157 KB），直接跳到下面 **A2 用 Sideloadly 安装**即可。
+> 工程仓库：https://github.com/jinzi-bot/123 （公开，改完 push 会自动重新编译）
 
 ---
 
